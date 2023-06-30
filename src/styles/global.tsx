@@ -8,6 +8,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: sans-serif;
+    font-family: 'San Francisco', 'Segoe UI', sans-serif;
   }
 `;
