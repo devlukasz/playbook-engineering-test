@@ -1,10 +1,12 @@
 import React from 'react';
+import { Expenses } from './components/Expenses';
+import { Container } from './App.styled';
 
 function App() {
   return (
-    <div>
-      main app
-    </div>
+    <Container>
+      <Expenses />
+    </Container>
   );
 }
 

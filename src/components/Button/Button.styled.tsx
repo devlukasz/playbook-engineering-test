@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
-  max-width: 100px;
+  width: 100%;
   padding: 4px 24px;
   background-color: #e2e2e290;
   border: 1px solid #1b1a1a90;
@@ -12,6 +12,6 @@ export const StyledButton = styled.button`
   cursor: pointer;
 
   @media (max-width: 768px) {
-    padding: 4px 7px;
+    padding: 4px;
   }
 `;
