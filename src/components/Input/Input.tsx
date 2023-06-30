@@ -1,5 +1,5 @@
 import React, { FC, ChangeEvent, HTMLInputTypeAttribute } from 'react';
-import { ErrorMessage, Wrapper, StyledInput, Container } from './Input.styled';
+import { ErrorMessage, Wrapper, StyledInput, Container, InputLabel } from './Input.styled';
 
 interface InputProps {
   name: string;
@@ -21,7 +21,7 @@ export const Input: FC<InputProps> = ({
   return (
     <Container>
       <Wrapper>
-        {label && <label>{label}</label>}
+        {label && <InputLabel>{label}</InputLabel>}
         <StyledInput
           type={type}
           name={name}

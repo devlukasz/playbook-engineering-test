@@ -5,5 +5,5 @@ export const ParagraphStyled = styled.p`
 `;
 
 export const HeadlineOneStyled = styled.h1`
-  font-size: 20px;
+  font-size: 24px;
 `;

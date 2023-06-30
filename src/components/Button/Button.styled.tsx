@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
+  max-width: 100px;
   padding: 4px 24px;
-  background-color: light-gray;
-  border: 1px solid black;
+  background-color: #e2e2e290;
+  border: 1px solid #1b1a1a90;
   border-radius: 4px;
   font-size: 16px;
-  cursor: pointer;
   outline: none;
+  color: black;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 4px 7px;
+  }
 `;
