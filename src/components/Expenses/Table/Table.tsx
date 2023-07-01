@@ -1,8 +1,12 @@
 import React from 'react'
 import { StyledTable, TableTH, TableHead, TableTD } from './Table.styled'
+import { observer } from 'mobx-react-lite';
 import { Button } from '../../Button'
+import { useStore } from '../../../hooks/useStore';
 
-export const Table = () => {
+export const Table = observer(() => {
+  const { expensesStore } = useStore();
+
   return (
     <StyledTable>
       <TableHead>
@@ -15,27 +19,15 @@ export const Table = () => {
       </TableHead>
 
       <tbody>
-        <tr>
-          <TableTD>Train ticket</TableTD>
-          <TableTD>100</TableTD>
-          <TableTD>22.54</TableTD>
-          <TableTD><Button onClick={() => ({})}>Delete</Button></TableTD>
-        </tr>
-
-        <tr>
-          <TableTD>Company dinner</TableTD>
-          <TableTD>200</TableTD>
-          <TableTD>45.09</TableTD>
-          <TableTD><Button onClick={() => ({})}>Delete</Button></TableTD>
-        </tr>
-
-        <tr>
-          <TableTD>Family dinner</TableTD>
-          <TableTD>200</TableTD>
-          <TableTD>45.09</TableTD>
-          <TableTD><Button onClick={() => ({})}>Delete</Button></TableTD>
-        </tr>
+        {(expensesStore.expenseList).map(({ id, title, plnAmount, eurAmount }) => (
+          <tr key={id}>
+            <TableTD>{title}</TableTD>
+            <TableTD>{plnAmount}</TableTD>
+            <TableTD>{eurAmount}</TableTD>
+            <TableTD ><Button onClick={() => expensesStore.removeExpense(id)}>Delete</Button></TableTD>
+          </tr>
+        ))}
       </tbody>
     </StyledTable>
   )
-}
+})

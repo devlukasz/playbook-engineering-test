@@ -1,4 +1,4 @@
-import { makeAutoObservable, reaction, action, computed } from "mobx";
+import { makeAutoObservable, reaction } from "mobx";
 import { v4 as uuidv4 } from "uuid";
 import { convertCurrency } from "../../utils/convertCurrency";
 
